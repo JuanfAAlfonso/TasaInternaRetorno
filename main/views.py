@@ -1,17 +1,19 @@
+import datetime
 import json
+from .models import Dividendos
 
-from django.shortcuts import render
 from django.http import HttpResponse
 
 
-def guardar_transacciones(request, informacion_transaccion):
-    json_informacion = json.loads(informacion_transaccion)
-    pass
-
-
-def obtener_tir(request):
+def obtener_tir(request, text):
     if request.method == "GET":
-        return HttpResponse(json.dumps({"status": "ACTIVO"}), content_type='application/json')
+        #json_informacion = json.loads(informacion_transaccion)
+        #for transaccion in json_informacion:
+            #print(transaccion)
+        # fecha = datetime.datetime.strptime(transaccion['fecha'], "%Y-%m-%dT%H:%M:%S%z")
+        # acciones = transaccion['acciones']
+        # valor = transaccion['valor']
+        return HttpResponse(text, content_type='application/json')
 
 
 def calcular_dividendos():
